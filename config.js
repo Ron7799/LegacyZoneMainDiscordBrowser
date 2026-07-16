@@ -1,37 +1,15 @@
 module.exports = {
 
+    discordClientID: "1525776799311728731",
 
-    // Discord OAuth
+    discordClientSecret: "kDzpkI9Slq_7789zmw2qAkDGOJZtFY85",
 
-    discordClientID:
-    "1525776799311728731",
+    callbackURL: "https://legacyzonemaindiscordbrowser.onrender.com/auth/discord/callback",
 
-
-
-    discordClientSecret:
-    "kDzpkI9Slq_7789zmw2qAkDGOJZtFY85",
-
-
-
-  callbackURL:
-"https://legacyzonemaindiscordbrowser.onrender.com/auth/discord/callback",
-
-
-
-
-
-
-    // שלושת המנהלים שיכולים להיכנס
-
-    admins:[
-
+    admins: [
         "1167771705150812192",
-
-        "1102305936535719946",
-
-        "1319038320122269727"
-
+        "1319038320122269727",
+        "1102305936535719946"
     ]
-
 
 };
