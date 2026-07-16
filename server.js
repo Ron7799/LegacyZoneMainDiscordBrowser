@@ -1,5 +1,6 @@
 const express = require("express");
 const fs = require("fs");
+const path = require("path");
 
 const session = require("express-session");
 const passport = require("passport");
@@ -250,29 +251,32 @@ passport.authenticate("discord", {
 
 
 // ==========================
-// Protect Admin
+// Admin Page
 // ==========================
 
+app.get("/admin.html", (req,res)=>{
 
-app.get("/admin.html",(req,res)=>{
 
-
-    if(!isAdmin(req)){
+    if(!req.user){
 
         return res.redirect("/login.html");
 
     }
 
 
-    res.sendFile(__dirname + "/admin.html");
+    if(!config.admins.includes(req.user.id)){
+
+        return res.redirect("/login.html");
+
+    }
+
+
+    res.sendFile(
+        path.join(__dirname,"admin.html")
+    );
 
 
 });
-
-
-
-
-
 
 // ==========================
 // Check Admin API
