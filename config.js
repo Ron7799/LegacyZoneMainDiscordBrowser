@@ -13,8 +13,8 @@ module.exports = {
 
 
 
-    callbackURL:
-    "https://הכתובת_שלך/auth/discord/callback",
+  callbackURL:
+"https://legacyzonemaindiscordbrowser.onrender.com/auth/discord/callback",
 
 
 
