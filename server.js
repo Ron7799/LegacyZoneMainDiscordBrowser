@@ -230,26 +230,15 @@ passport.authenticate("discord")
 
 
 app.get(
-
 "/auth/discord/callback",
 
-passport.authenticate(
-
-"discord",
-
-{
-
-failureRedirect:"/login.html"
-
-}
-
-),
+passport.authenticate("discord", {
+    failureRedirect:"/login.html"
+}),
 
 (req,res)=>{
 
-
-res.redirect("/admin.html");
-
+    res.redirect("/admin.html");
 
 }
 
@@ -268,20 +257,14 @@ res.redirect("/admin.html");
 app.get("/admin.html",(req,res)=>{
 
 
-if(!isAdmin(req)){
+    if(!isAdmin(req)){
+
+        return res.redirect("/login.html");
+
+    }
 
 
-return res.redirect("/login.html");
-
-
-}
-
-
-res.sendFile(
-
-__dirname+"/admin.html"
-
-);
+    res.sendFile(__dirname + "/admin.html");
 
 
 });
